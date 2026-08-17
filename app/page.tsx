@@ -7,136 +7,156 @@ type ScenarioId = "balanced" | "energy" | "throughput";
 
 const copy = {
   ar: {
-    eyebrow: "MMSI™ · الإصدار الأولي التشغيلي",
-    title: "ذكاء القرار الصناعي قبل التنفيذ",
+    eyebrow: "MMSI™ · تحقق صناعي مقيد قبل التنفيذ",
+    title: "ذكاء القرار الصناعي على بيانات تشغيل حقيقية",
     intro:
-      "لوحة تشغيل أولية تحول إشارات المصنع إلى قرار قابل للمراجعة، مع بوابة سلامة تمنع اعتماد أي توصية قبل اكتمال شروطها.",
-    simulation: "بيانات محاكاة للعرض",
+      "عرض تحليلي مبني على بيانات تشغيل صناعية منشورة، يوضح سلامة البيانات ونتيجة الاختبار الزمني وحدود الاعتماد قبل أي تشغيل ميداني.",
+    simulation: "بيانات صناعية حقيقية منشورة",
     language: "English",
-    run: "تشغيل محاكاة محكومة",
-    running: "جاري تشغيل السيناريو...",
-    production: "الإنتاجية الحالية",
-    energy: "كثافة الطاقة",
-    quality: "مردود الجودة",
-    safety: "بوابة السلامة",
-    stable: "مستقر",
-    ready: "جاهز للمراجعة",
-    hold: "إيقاف وقائي",
-    overview: "قراءة تشغيلية",
-    last24: "آخر 24 ساعة · عينة محاكاة",
-    output: "مؤشر الإنتاج",
-    energyTrend: "كثافة الطاقة",
+    run: "إعادة تشغيل التحقق التحليلي",
+    running: "جاري إعادة التحقق...",
+    production: "السجلات المعالجة",
+    energy: "دقة الاختبار الزمني",
+    quality: "متوسط الخطأ المطلق",
+    safety: "قرار الإنتاج",
+    stable: "86,400",
+    ready: "التحليل مكتمل",
+    hold: "إيقاف إنتاجي",
+    overview: "دليل التحقق",
+    last24: "ملخص التحقق الزمني",
+    output: "معامل التحديد R²",
+    energyTrend: "RMSE",
+    datasetTitle: "مصدر بيانات الاختبار",
+    datasetSubtitle: "بيانات تشغيل منشورة لغلاية فحم صناعية",
+    sourceLabel: "المصدر",
+    sourceValue: "مصنع كيميائي في تشجيانغ، الصين",
+    scopeLabel: "النطاق",
+    scopeValue: "27 مارس إلى 1 أبريل 2022 · 5 ثوانٍ · 30 متغيراً",
+    evidenceLabel: "سجل التحقق",
+    evidenceValue: "تشغيل تحليلي مقيد · 17,280 سجلاً للاختبار",
+    sourceLink: "فتح المصدر العلمي",
+    evidenceBadge: "VALIDATED REPLAY",
+    chartFootnote: "المقارنة بين التدريب والاختبار الزمني، وليست ضماناً للأداء التجاري",
     decisionGate: "بوابة القرار",
-    gateSubtitle: "لا تنفيذ تلقائياً في هذه النسخة",
+    gateSubtitle: "لا اعتماد إنتاجي في هذه النسخة",
     dataCheck: "سلامة البيانات",
-    causalCheck: "التحقق السببي",
-    complianceCheck: "حدود الامتثال",
+    causalCheck: "التحقق الزمني",
+    complianceCheck: "الاعتماد الإنتاجي",
     passed: "مستوفى",
+    completed: "مكتمل",
     review: "مراجعة مطلوبة",
-    recommendation: "التوصية المقترحة",
+    recommendation: "الاستنتاج التحليلي",
     scenarioTitle: "مختبر السيناريوهات",
-    scenarioSubtitle: "اختبر أثر القرار قبل إرساله إلى بيئة المصنع",
-    balanced: "توازن الإنتاج والطاقة",
-    energyScenario: "خفض كثافة الطاقة",
-    throughputScenario: "رفع الإنتاجية",
-    expected: "الأثر المتوقع",
-    noActuation: "لا يوجد اتصال تحكم فعلي",
-    apply: "اعتماد للمراجعة",
+    scenarioSubtitle: "استكشاف نتائج التشغيل الحقيقي قبل أي قرار ميداني",
+    balanced: "فحص سلامة البيانات",
+    energyScenario: "مراجعة إشارات الانحراف",
+    throughputScenario: "مراجعة الاختبار الزمني",
+    expected: "المحصلة",
+    noActuation: "لا يوجد اتصال تحكم أو كتابة أوامر",
+    apply: "إضافة إلى سجل المراجعة",
     applied: "أضيفت إلى سجل المراجعة",
-    causalTitle: "سلسلة العلاقة السببية",
-    causalSubtitle: "مسار تفسير مختصر للتوصية الحالية",
-    temperature: "الحرارة",
-    pressure: "الضغط",
-    energyNode: "الطاقة",
-    qualityNode: "الجودة",
+    causalTitle: "مسار التحقق",
+    causalSubtitle: "مسار التحقق من المصدر إلى قرار الإنتاج",
+    temperature: "مصدر البيانات",
+    pressure: "تهيئة السجلات",
+    energyNode: "اختبار زمني",
+    qualityNode: "مراجعة بشرية",
     controls: "ضوابط المنصة",
     audit: "سجل تدقيق كامل",
     explanation: "تفسير هندسي لكل توصية",
     failClosed: "إغلاق عند الفشل",
     economic: "أثر اقتصادي قابل للقياس",
     footer:
-      "MMSI™ · نموذج أولي تشغيلي · البيانات المعروضة محاكاة وليست بيانات مصنع حقيقية · لا تصدر هذه النسخة أوامر تحكم فعلية.",
+      "MMSI™ · نتائج من بيانات صناعية منشورة · لا تُنسب النتائج إلى سابك · لا تصدر هذه النسخة أوامر تحكم فعلية.",
   },
   en: {
-    eyebrow: "MMSI™ · OPERATIONAL MVP",
-    title: "Industrial decision intelligence before execution",
+    eyebrow: "MMSI™ · BOUNDED INDUSTRIAL VALIDATION",
+    title: "Industrial decision intelligence on real operating data",
     intro:
-      "A first operational slice that turns plant signals into reviewable decisions, with a safety gate that blocks recommendations until their conditions are satisfied.",
-    simulation: "Synthetic demonstration data",
+      "An analytical view built on published industrial operating data, showing data integrity, temporal holdout results and authorization limits before field deployment.",
+    simulation: "Published real industrial data",
     language: "العربية",
-    run: "Run governed simulation",
-    running: "Running scenario...",
-    production: "Current throughput",
-    energy: "Energy intensity",
-    quality: "Quality yield",
-    safety: "Safety gate",
-    stable: "Stable",
-    ready: "Review ready",
-    hold: "Fail-closed hold",
-    overview: "Operational view",
-    last24: "Last 24 hours · synthetic sample",
-    output: "Throughput index",
-    energyTrend: "Energy intensity",
+    run: "Replay analytical validation",
+    running: "Replaying validation...",
+    production: "Rows processed",
+    energy: "Temporal holdout R²",
+    quality: "Mean absolute error",
+    safety: "Production decision",
+    stable: "86,400",
+    ready: "Analysis complete",
+    hold: "Production hold",
+    overview: "Validation evidence",
+    last24: "Temporal validation summary",
+    output: "R² score",
+    energyTrend: "RMSE",
+    datasetTitle: "Validation data source",
+    datasetSubtitle: "Published operating data from an industrial coal boiler",
+    sourceLabel: "Source",
+    sourceValue: "Chemical plant in Zhejiang, China",
+    scopeLabel: "Scope",
+    scopeValue: "27 Mar to 1 Apr 2022 · 5 seconds · 30 variables",
+    evidenceLabel: "Validation record",
+    evidenceValue: "Bounded analytical run · 17,280 holdout rows",
+    sourceLink: "Open scientific source",
+    evidenceBadge: "VALIDATED REPLAY",
+    chartFootnote: "Training and temporal holdout comparison; not a commercial performance guarantee",
     decisionGate: "Decision gate",
-    gateSubtitle: "No automatic actuation in this release",
+    gateSubtitle: "No production authorization in this release",
     dataCheck: "Data integrity",
-    causalCheck: "Causal validation",
-    complianceCheck: "Compliance bounds",
+    causalCheck: "Temporal validation",
+    complianceCheck: "Production authorization",
     passed: "Passed",
+    completed: "Completed",
     review: "Review required",
-    recommendation: "Recommended action",
+    recommendation: "Analytical conclusion",
     scenarioTitle: "Scenario lab",
-    scenarioSubtitle: "Test decision impact before sending it to a plant environment",
-    balanced: "Balance throughput and energy",
-    energyScenario: "Reduce energy intensity",
-    throughputScenario: "Increase throughput",
-    expected: "Expected impact",
-    noActuation: "No live control connection",
-    apply: "Submit for review",
+    scenarioSubtitle: "Explore real-data validation results before any field decision",
+    balanced: "Inspect data integrity",
+    energyScenario: "Review deviation signals",
+    throughputScenario: "Review temporal holdout",
+    expected: "Result",
+    noActuation: "No control connection or command write",
+    apply: "Add to review log",
     applied: "Added to review log",
-    causalTitle: "Causal relationship chain",
-    causalSubtitle: "A compact explanation path for the current recommendation",
-    temperature: "Temperature",
-    pressure: "Pressure",
-    energyNode: "Energy",
-    qualityNode: "Quality",
+    causalTitle: "Validation path",
+    causalSubtitle: "From source data to production decision",
+    temperature: "Data source",
+    pressure: "Record preparation",
+    energyNode: "Temporal holdout",
+    qualityNode: "Human review",
     controls: "Platform controls",
     audit: "Full audit trail",
     explanation: "Engineering explanation per recommendation",
     failClosed: "Fail-closed governance",
     economic: "Measurable economic impact",
     footer:
-      "MMSI™ · Operational prototype · Displayed data is synthetic and not plant data · This release does not issue live control commands.",
+      "MMSI™ · Results from published industrial data · Results are not attributed to SABIC · This release does not issue live control commands.",
   },
 } as const;
 
 const trend = [
-  { label: "00", output: 58, energy: 71 },
-  { label: "04", output: 62, energy: 66 },
-  { label: "08", output: 74, energy: 61 },
-  { label: "12", output: 78, energy: 58 },
-  { label: "16", output: 81, energy: 55 },
-  { label: "20", output: 76, energy: 60 },
+  { label: "التدريب", labelEn: "Train", output: 53.3, energy: 30.0 },
+  { label: "الاختبار الزمني", labelEn: "Holdout", output: 30.5, energy: 31.8 },
 ];
 
 const scenarios: Record<ScenarioId, { impact: string; impactEn: string; recommendation: string; recommendationEn: string }> = {
   balanced: {
-    impact: "زيادة إنتاجية 4.8% مع خفض كثافة الطاقة 3.1%",
-    impactEn: "4.8% throughput uplift with 3.1% lower energy intensity",
-    recommendation: "خفض نقطة ضبط الحرارة تدريجياً ضمن حدود الجودة ومراقبة الضغط خلال دورة التحقق.",
-    recommendationEn: "Gradually lower the temperature setpoint within quality limits while monitoring pressure through the validation cycle.",
+    impact: "86,400 من 86,400 سجلاً اجتاز فحص القيم غير الصالحة",
+    impactEn: "86,400 of 86,400 rows passed invalid-value checks",
+    recommendation: "جودة البيانات مستوفاة لهذا التشغيل التحليلي، مع إبقاء الاعتماد الإنتاجي خاضعاً للمراجعة البشرية.",
+    recommendationEn: "Data quality passed for this analytical run; production authorization remains subject to human review.",
   },
   energy: {
-    impact: "خفض كثافة الطاقة 7.2% مع أثر إنتاجي محدود",
-    impactEn: "7.2% lower energy intensity with limited throughput impact",
-    recommendation: "تفعيل مسار كفاءة الطاقة المقترح بعد اعتماد مهندس التشغيل ومراجعة حدود السلامة.",
-    recommendationEn: "Activate the proposed energy-efficiency path after operations approval and safety-bound review.",
+    impact: "8,452 إشارة انحراف بنسبة 9.78% للمراجعة البشرية",
+    impactEn: "8,452 deviation-review flags at a 9.78% review rate",
+    recommendation: "الإشارات لا تمثل قرارات تحكم أو سبباً مثبتاً؛ تحتاج إلى مراجعة مهندس العملية قبل أي تفسير تشغيلي.",
+    recommendationEn: "Flags are not control decisions or proven causes; process-engineer review is required before any operational interpretation.",
   },
   throughput: {
-    impact: "زيادة إنتاجية 8.6% مع ارتفاع مراقب في استهلاك الطاقة",
-    impactEn: "8.6% throughput uplift with a controlled energy increase",
-    recommendation: "رفع معدل التغذية على مراحل مع إبقاء مؤشر الجودة وبوابة الضغط تحت المراقبة.",
-    recommendationEn: "Increase feed rate in stages while keeping quality indicators and the pressure gate under observation.",
+    impact: "R² = 0.305 في 17,280 سجلاً للاختبار الزمني",
+    impactEn: "R² = 0.305 on 17,280 temporal holdout rows",
+    recommendation: "النتيجة تثبت قابلية الفحص التحليلي فقط، ولا تثبت الجاهزية التشغيلية أو التنبؤ لمدة يومين إلى سبعة أيام.",
+    recommendationEn: "The result supports analytical screening only; it does not establish operational readiness or two-to-seven-day prediction.",
   },
 };
 
@@ -217,10 +237,25 @@ export default function Home() {
         </section>
 
         <section className="metrics-grid" aria-label={t.overview}>
-          <MetricCard label={t.production} value="78.4" detail="index / 100 · +4.8%" tone="teal" />
-          <MetricCard label={t.energy} value="61.2" detail="kWh / unit · −3.1%" tone="amber" />
-          <MetricCard label={t.quality} value="98.1%" detail="within target window" tone="blue" />
-          <MetricCard label={t.safety} value={t.stable} detail={t.ready} tone="green" />
+          <MetricCard label={t.production} value="86,400" detail={lang === "ar" ? "5 ثوانٍ · 30 متغيراً" : "5 seconds · 30 variables"} tone="teal" />
+          <MetricCard label={t.energy} value="0.305" detail={lang === "ar" ? "17,280 سجلاً للحجز الزمني" : "17,280 temporal holdout rows"} tone="amber" />
+          <MetricCard label={t.quality} value="2.394" detail={lang === "ar" ? "متوسط الخطأ المطلق للاختبار" : "holdout mean absolute error"} tone="blue" />
+          <MetricCard label={t.safety} value="HOLD" detail={lang === "ar" ? "مراجعة بشرية مطلوبة" : "human review required"} tone="green" />
+        </section>
+
+        <section className="panel evidence-panel">
+          <div className="panel-heading">
+            <div>
+              <p className="panel-kicker">{t.datasetTitle}</p>
+              <h2>{t.datasetSubtitle}</h2>
+            </div>
+            <span className="evidence-status">CC0 · PUBLIC</span>
+          </div>
+          <div className="evidence-grid">
+            <div className="evidence-item"><span>{t.sourceLabel}</span><strong>{t.sourceValue}</strong><a href="https://springernature.figshare.com/articles/dataset/A_long-tailed_distribution_time-series_dataset_in_boiler_equipment/28868849" target="_blank" rel="noreferrer">{t.sourceLink}</a></div>
+            <div className="evidence-item"><span>{t.scopeLabel}</span><strong>{t.scopeValue}</strong><small>{t.evidenceValue}</small></div>
+            <div className="evidence-item"><span>{t.evidenceLabel}</span><strong>{lang === "ar" ? "تشغيل 11 أغسطس 2026" : "Run dated 11 Aug 2026"}</strong><small>46fa5984f8c136b5</small><small className="hash-line">CSV SHA-256 · e4c6078775fc24a72e3c1be4bb36c36902a2d6c30c1358bcba409caadf072f84</small></div>
+          </div>
         </section>
 
         <section className="dashboard-grid">
@@ -230,7 +265,7 @@ export default function Home() {
                 <p className="panel-kicker">{t.overview}</p>
                 <h2>{t.last24}</h2>
               </div>
-              <span className="live-badge"><i /> LIVE MODEL</span>
+              <span className="live-badge"><i /> {t.evidenceBadge}</span>
             </div>
             <div className="chart-legend">
               <span><i className="legend-output" /> {t.output}</span>
@@ -243,11 +278,11 @@ export default function Home() {
                     <div className="bar output-bar" style={{ height: `${point.output}%` }} />
                     <div className="bar energy-bar" style={{ height: `${point.energy}%` }} />
                   </div>
-                  <span>{point.label}</span>
+                  <span>{lang === "ar" ? point.label : point.labelEn}</span>
                 </div>
               ))}
             </div>
-            <div className="chart-footnote"><span>↑ 4.8%</span> {lang === "ar" ? "تحسن تشغيلي مرصود في العينة" : "observed operating improvement in sample"}</div>
+            <div className="chart-footnote"><span>R² 0.305</span> {t.chartFootnote}</div>
           </article>
 
           <article className="panel gate-panel">
@@ -260,8 +295,8 @@ export default function Home() {
             </div>
             <div className="gate-list">
               <div className="gate-row"><span className="gate-index">01</span><span>{t.dataCheck}</span><strong>{t.passed}</strong></div>
-              <div className="gate-row"><span className="gate-index">02</span><span>{t.causalCheck}</span><strong>{t.passed}</strong></div>
-              <div className="gate-row hold-row"><span className="gate-index">03</span><span>{t.complianceCheck}</span><strong>{t.review}</strong></div>
+              <div className="gate-row"><span className="gate-index">02</span><span>{t.causalCheck}</span><strong>{t.completed}</strong></div>
+              <div className="gate-row hold-row"><span className="gate-index">03</span><span>{t.complianceCheck}</span><strong>{t.hold}</strong></div>
             </div>
             <div className="hold-banner"><span>!</span><div><strong>{t.hold}</strong><small>{t.noActuation}</small></div></div>
           </article>
@@ -285,7 +320,7 @@ export default function Home() {
               ))}
             </div>
             <div className="recommendation-card">
-              <div className="recommendation-top"><span>{t.recommendation}</span><span className="review-tag">{t.ready}</span></div>
+              <div className="recommendation-top"><span>{t.recommendation}</span><span className="review-tag">{t.review}</span></div>
               <h3>{scenarioLabel}</h3>
               <p>{recommendation}</p>
               <div className="impact-line"><span>{t.expected}</span><strong>{impact}</strong></div>
