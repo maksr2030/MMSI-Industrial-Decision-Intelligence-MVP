@@ -36,7 +36,7 @@ export function sites(): Plugin {
         await cp(hostingConfig, resolve(outputDirectory, "hosting.json"));
       }
       if (await exists(drizzleSource)) {
-        await cp(hostingConfig, resolve(outputDirectory, "drizzle"), {
+        await cp(drizzleSource, resolve(outputDirectory, "drizzle"), {
           recursive: true,
         });
       }
